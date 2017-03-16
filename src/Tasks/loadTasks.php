@@ -8,12 +8,8 @@
 
 namespace Joomla\Jorobo\Tasks;
 
-use Joomla\Jorobo\Tasks\Metrics\loadTasks as metricsTasks;
-
 trait loadTasks
 {
-	use metricsTasks;
-
 	/**
 	 * Map Task
 	 *
@@ -68,5 +64,17 @@ trait loadTasks
 	protected function taskCopyrightHeaders($params)
 	{
 		return new CopyrightHeader($params);
+	}
+
+	/**
+	 * Bump the __DEPLOY_VERSION__ task
+	 *
+	 * @return  BumpVersion
+	 *
+	 * @since   1.0
+	 */
+	protected function taskBumbVersion()
+	{
+		return new BumpVersion();
 	}
 }
